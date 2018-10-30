@@ -1,0 +1,54 @@
+\newcommand{\authorinfotitle}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\authorinfo}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\titleinfo}{MMS}
+\newcommand{\qed}{\square}
+
+\documentclass [a4paper,11pt]{article}
+\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{breqn}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+
+\author{\authorinfotitle}
+\title{\titleinfo}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\authorinfo}
+\fancyhead[L]{MMS Hausaufgaben}
+\fancyfoot[C]{\thepage}
+
+\begin{document}
+\maketitle
+    \begin{enumerate}
+        % Aufgabe 1
+        \item[\textbf{1.}]
+            \begin{enumerate}
+                \item[a)] $f(t) = \sin(t)$
+              	$$\alpha_k = \frac{1}{\pi} \int_{-\pi}^{\pi}(\sin(t)\cos(kt))dt$$
+              	Für $k\neq 1$ gilt $\alpha=0$, da sie orthogonal zu einander sind.
+              	Für $k = 1$ sind gilt auch $\alpha=0$
+              	
+              	$$\beta_k = \frac{1}{\pi} \int_{-\pi}^{\pi}(\sin(t)\sin(kt))dt$$
+              	$$  = \frac{1}{\pi} \left(  \int_{-\pi}^{\pi}(\cos(t)\cos(kt))dt-\int_{-\pi}^{\pi}(\cos(t+kt))dt\right) $$
+              	$$  = \frac{1}{\pi} \left(  \frac{1}{2}\int_{-\pi}^{\pi}(\cos(t-kt))dt +\frac{1}{2}\int_{-\pi}^{\pi}(\cos(t+kt))dt -\int_{-\pi}^{\pi}(\cos(t+kt))dt\right) $$
+              	$$  = \frac{1}{\pi} \left(  \frac{1}{2}\int_{-\pi}^{\pi}(\cos(t-kt))dt-\frac{1}{2}\int_{-\pi}^{\pi}(\cos(t+kt))dt\right) $$
+              	$$\int_{-\pi}^{\pi}(\cos(t-kt))dt = 
+              	\begin{cases}
+					0 & k \neq 1\\
+					2\pi & k = 1              	
+              	\end{cases}$$
+              	$$\int_{-\pi}^{\pi}(\cos(t-kt))dt = 0 $$
+              	$$\beta_1 = \frac{1}{\pi} \cdot \frac{1}{2} \cdot 2\pi = 1$$
+              	$$\beta_k = 0 für k > 1$$
+            \end{enumerate}
+    \end{enumerate}
+\end{document}
