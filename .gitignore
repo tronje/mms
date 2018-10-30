@@ -1,5 +1,6 @@
 ### misc ###
 *.zip
+*.wav
 
 ### LaTeX ###
 ## Core latex/pdflatex auxiliary files:
