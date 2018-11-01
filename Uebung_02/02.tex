@@ -31,7 +31,25 @@
     \begin{enumerate}
         % Aufgabe 1
         \item[\textbf{1.}]
+        	Für Aufgabe 1 haben wir die folgenden Formeln aus der Vorlesung verwendet.
+        	\begin{equation}
+        	\int_{\frac{T}{2}}^{\frac{T}{2}}(\sin(k\omega_0x)\cos(m\omega_0x))dx = 0, für k,m\in \mathbb{Z}        	
+        	\end{equation}
+        	\begin{equation}
+        	\int_{-\pi}^{\pi}(\sin(mx)\sin(nx))dx = \delta_{m,n}\pi
+        	\end{equation}
+        	\begin{equation}
+        	\int_{-\pi}^{\pi}(\cos(mx)\cos(nx))dx = \delta_{m,n}\pi
+        	\end{equation}
+        	Des weiteren noch:
+        	\begin{equation}
+        	\int \cos(kt)dt = \frac{\sin(kt)}{k}
+        	\end{equation}
+        	\begin{equation}
+        	\cos(t+\pi) = -\cos(t)
+        	\end{equation}
             \begin{enumerate}
+            	% TODO: das ist komplizierter als es sein muss
                 \item[a)] $f(t) = \sin(t)$
               	$$\alpha_k = \frac{1}{\pi} \int_{-\pi}^{\pi}(\sin(t)\cos(kt))dt$$
               	Für $k\neq 1$ gilt $\alpha=0$, da sie orthogonal zu einander sind.
@@ -48,7 +66,51 @@
               	\end{cases}$$
               	$$\int_{-\pi}^{\pi}(\cos(t-kt))dt = 0 $$
               	$$\beta_1 = \frac{1}{\pi} \cdot \frac{1}{2} \cdot 2\pi = 1$$
-              	$$\beta_k = 0 für k > 1$$
+              	$$\beta_k = 0, für k > 1$$
+              	
+              	\item[b)] $f(t) = \cos(2t)$
+			 
+              	$$\alpha_k = \frac{1}{\pi}\int_{-\pi}^{\pi}(\cos(2t)\cos(kt))dt$$
+              	$$\alpha_2 = \frac{1}{\pi}\pi = 1$$
+				$$\alpha_k = 0, für k\neq2$$
+				
+				$$\beta_k = \frac{1}{\pi}\int_{-\pi}^{\pi}(\cos(2t)\sin(kt))dt = 0$$
+				
+				\item[c)] $f(t) = 1$
+			 
+			 	\begin{dmath*}
+              	\alpha_k = \frac{1}{\pi}\int_{-\pi}^{\pi}(\cos(kt))dt
+              	= \frac{1}{\pi}\left[ \frac{\sin(kt)}{k}\right]_{-\pi}^{\pi}
+              	= \frac{1}{\pi}\left(\frac{\sin(-k\pi)}{k}-\frac{\sin(k\pi)}{k} \right)
+              	= \frac{1}{\pi}\left(-\frac{\sin(k\pi)}{k}-\frac{\sin(k\pi)}{k} \right)
+              	= \frac{1}{\pi}\left(-2\frac{\sin(k\pi)}{k} \right)
+              	= -\frac{2\sin(k\pi)}{k\pi}
+              	\end{dmath*}              	
+
+	           	$$\beta_k = \frac{1}{\pi}\int_{-\pi}^{\pi}(\sin(kt))dt= 0$$
+				
+				\item[d)] $f(t) = \cos(5t+\pi)+3\sin(9t)$
+				\begin{dmath*}
+				\alpha_k = \frac{1}{\pi} \int_{-\pi}^{\pi}((\cos(5t+\pi)+3\sin(9t))cos(kt))dt
+				= \frac{1}{\pi} \int_{-\pi}^{\pi}(\cos(5t+\pi)cos(kt)+3\sin(9t)cos(kt))dt
+				= \frac{1}{\pi}\left( \int_{-\pi}^{\pi}(\cos(5t+\pi)cos(kt))dt+\int_{-\pi}^{\pi}3\sin(9t)cos(kt))dt \right)
+				= \frac{1}{\pi} \int_{-\pi}^{\pi}(\cos(5t+\pi)cos(kt))dt
+				= \frac{-1}{\pi} \int_{-\pi}^{\pi}(\cos(5t)cos(kt))dt
+				\end{dmath*}
+				$$\alpha_5 = -\frac{1}{pi}pi = -1$$				
+				$$\alpha_k = 0, für k \neq 5$$
+				
+				\begin{dmath*}
+				\beta_k = \frac{1}{\pi} \int_{-\pi}^{\pi}((\cos(5t+\pi)+3\sin(9t))sin(kt))dt
+				= \frac{1}{\pi} \int_{-\pi}^{\pi}(\cos(5t+\pi)sin(kt)+3\sin(9t)sin(kt))dt
+				= \frac{1}{\pi}\left( \int_{-\pi}^{\pi}(\cos(5t+\pi)sin(kt))dt+\int_{-\pi}^{\pi}3\sin(9t)sin(kt))dt \right)
+				= \frac{1}{\pi}\left( -\int_{-\pi}^{\pi}(\cos(5t)sin(kt))dt+\int_{-\pi}^{\pi}3\sin(9t)sin(kt))dt \right)
+				= \frac{1}{\pi} \int_{-\pi}^{\pi}3\sin(9t)sin(kt))dt
+				= \frac{3}{\pi} \int_{-\pi}^{\pi}\sin(9t)sin(kt))dt
+				\end{dmath*}
+				
+				$$\beta_9 = \frac{3}{\pi}\pi = 3$$
+				$$\beta_k = 0, für k \neq 9$$
             \end{enumerate}
     \end{enumerate}
 \end{document}
