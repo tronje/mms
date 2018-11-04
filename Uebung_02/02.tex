@@ -3,7 +3,7 @@
 \newcommand{\titleinfo}{MMS}
 \newcommand{\qed}{\square}
 
-\documentclass [a4paper,11pt]{article}
+\documentclass[a4paper,11pt]{article}
 \usepackage[german,ngerman]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -114,6 +114,49 @@
 			Und dann gilt aufgrund von (2):
 			$$\beta_9 = \frac{3}{\pi} \cdot \pi = 3$$
 			$$\beta_k = 0 \text{, für } k \neq 9$$
+		\end{enumerate}
+
+		% Aufgabe 2
+		\item[\textbf{2)}]
+		\begin{enumerate}
+			\item[1)]
+				Wir wollen eine Rechteckschwingung mit Amplitude 1 synthetisieren.
+				Dazu lautet die Fourierreihe, wie im Code in der Aufgabe beschrieben:
+				\begin{align*}
+				f(t) = \frac{4}{\pi} \sum_{k=0}^{n} \frac{\sin(k\pi t)}{k}
+				\end{align*}
+				Es wäre noch korrekter, bis Unendlich zu summieren, nicht nur bis $n$ ---
+				aber $n$ zu variieren ist ja der Witz der Aufgabe.
+				Bei $n\leq1$ sehen wir bloß eine eine Gerade entlang der X-Achse,
+				da ja der Loop gar nicht ausgeführt wird. Steigern wir $n$, so
+				nähert sich unser Graph immer weiter der Rechteckschwingung an.
+				Bei $n=2$ haben wir einen einfachen Sinus-Graph. Bei $n=4$ ist
+				schon eine gewissen Ähnlichkeit mit der Rechteckschwingung zu
+				erkennen. Bei $n=10$ erkennt man schon eine recht deutliche Annäherung
+				--- solche Bilder sieht man auch des öfteren im Zusammenhang mit
+				der Signalverarbeitung!
+				Bei $n=100$ sind nur noch kleine Abweichungen von der Rechteckschwingung
+				zu sehen, und ab $n=2000$ treten keine weiteren Verbesserungen auf.
+				Wir haben mit diesem Wert also die Rechteckschwingung ziemlich gut
+				synthetisiert.
+			\item[2)]
+				Wir hören ehrlich gesagt keinen Unterschied zwischen den beiden
+				Abtastraten von 6kHz und 12kHz --- im Prinzip müsste eine
+				höhere Abtastrate einen ``besseren'' Ton erzeugen, da mehr
+				Klanginformation gespeichert (``abgetastet'') wird.
+				Eine sehr niedrige Abtastrate von 500Hz erzeugt einen sehr
+				dunklen bzw. dumpfen Ton, und bei noch niedrigeren Raten hört
+				man irgendwann eben gar nichts mehr.
+				Eine Abtastrate von 50kHz, ungefähr das Maximum was einem
+				Menschen noch hörbare Klanginformationen bereitstellt, klingt
+				für uns genau wie die 6kHz und 12kHz Töne.
+			\item[3)]
+				Die additiv überlagerten Töne klingen verzerrt - dies liegt
+				wohl an Interferenz zwischen den beiden Schwingungen. Da die
+				Cosinusschwingungen nicht die gleiche Periode haben, wird nicht
+				einfach eine cosinus-ähnliche Schwingung mit anderer Amplitude
+				erzeugt, sondern eine wahrscheinlich eher ``zackige'' Funktion,
+				welche also einen verzerrten Ton generiert.
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
