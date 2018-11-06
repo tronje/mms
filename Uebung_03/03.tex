@@ -34,6 +34,35 @@
 		\item[\textbf{1.}]
 		\begin{enumerate}
 		\item[\textbf{1)}]
+		\begin{enumerate}
+			\item[\textbf{a)}] $z_1 = 1+j\sqrt{3}$ $z_2=1-j$
+			\begin{dmath*}
+			z_1+z_2 = 1+1+j\sqrt{3}-j = 2+j(\sqrt{3}-1)
+			\end{dmath*}
+			\begin{dmath*}
+			z_1-z_2 = 1-1+j\sqrt{3}+j = j(\sqrt{3}+1)
+			\end{dmath*}
+			\begin{dmath*}
+			z_1 \cdot z_2 = (1+j\sqrt{3})(1-j)
+			              = 1-j+j\sqrt{3}+\sqrt{3}
+			              = (1+\sqrt{3})+j(\sqrt{3}-1)
+			\end{dmath*}
+			\begin{dmath*}
+			z_1 / z_2 = \frac{(1+j\sqrt{3})}{(1-j)}
+			          = \frac{1+\sqrt{3}}{1+1}+j\frac{\sqrt{3}-1}{1+1}
+			          = \frac{1+\sqrt{3}}{2}+j\frac{\sqrt{3}-1}{2}
+			\end{dmath*}
+			\begin{dmath*}
+			z_1^* \cdot z_2 = (1-j\sqrt{3})(1-j)
+			              = 1-j-j\sqrt{3}-sqrt{3}
+			              = (1-\sqrt{3})-j(\sqrt{3}+1)
+			\end{dmath*}
+			\begin{dmath*}
+			z_1 / z_2^* = \frac{(1+j\sqrt{3})}{(1+j)}
+			            = \frac{1+\sqrt{3}}{1+1}+j\frac{\sqrt{3}-1}{1+1}
+			            = \frac{1+\sqrt{3}}{2}+j\frac{\sqrt{3}-1}{2}
+			\end{dmath*}
+		\end{enumerate}
 		\item[\textbf{2)}]
 		$e^{i\theta}$ stellt einen Vector in der complexen Zahlenebene da, der um einen Winkel $\theta$ um den Einheitskreis rotiert worden ist. Mit der eulerschen Formel $e^{i\theta} = \cos(\theta)+i\sin(theta)$ bekommt man die kartesischen Koordinaten des rotierten Vektors. Da $\pi$ genau eine halbe Rotation um den Einheitskreis ist bekommt man $e^{i\theta} = -1$. Dies kann man dann noch umformen um Eulers Identität $e^{i\theta} +1 = 0$ zu erhalten.
 		
@@ -79,8 +108,8 @@
         % the placement is better this way
         \draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
               (1.25cm,0cm)  node[above=1pt] {$(1,0)$}
-              (0cm,-1.25cm) node[fill=white] {$(0,-1)$}
-              (0cm,1.25cm)  node[fill=white] {$(0,1)$};
+              (0cm,-1.25cm) node[fill=white] {$(0,-i)$}
+              (0cm,1.25cm)  node[fill=white] {$(0,i)$};
     \end{tikzpicture}
     	\end{enumerate}
 	\item[\textbf{1.}]
