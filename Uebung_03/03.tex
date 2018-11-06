@@ -33,8 +33,9 @@
 		% Aufgabe 1
 		\item[\textbf{1.}]
 		\begin{enumerate}
-		\item[\textbf{1)}]
-		\begin{enumerate}
+			\item[\textbf{1)}]
+			\begin{enumerate}
+			% b)
 			\item[\textbf{a)}] $z_1 = 1+j\sqrt{3}$ $z_2=1-j$
 			\begin{dmath*}
 			z_1+z_2 = 1+1+j\sqrt{3}-j = 2+j(\sqrt{3}-1)
@@ -62,15 +63,37 @@
 			            = \frac{1+\sqrt{3}}{1+1}+j\frac{\sqrt{3}-1}{1+1}
 			            = \frac{1+\sqrt{3}}{2}+j\frac{\sqrt{3}-1}{2}
 			\end{dmath*}
+			
+			%b)
+			\item[\textbf{b)}] $z_1 = 2+3j$ $z_2=3-5j$
+			
+			\begin{align*}
+			z_1+z_2 &= 2+3+3j-5j \\
+					&= 5-2j \\\\
+			z_1-z_2 &= 2-3+3j+5j \\
+					&= -1+8j \\\\
+			z_1 \cdot z_2 &= (2+3j)(3-5j) \\
+			              &= 6-10j+9j+15 \\
+			              &= 21-j \\\\
+			z_1 / z_2 &= \frac{(2+3j)}{(3-5j)} \\
+			          &= \frac{6-15}{9+25}+j\frac{9+10}{9+25} \\
+			          &= \frac{-9}{34}+j\frac{19}{34} \\\\
+			z_1^* \cdot z_2 &= (2-3j)(3-5j) \\
+			              	&= 6-10j-9j-15 \\
+			              	&= -9-19j \\\\
+			z_1 / z_2^* &= \frac{2+3j}{3+5j}\\
+						&= \frac{6+15}{9+25} + j\frac{9-10}{9+25} \\
+						&= \frac{21}{34}-k\frac{1}{34}
+			\end{align*}
 		\end{enumerate}
 		\item[\textbf{2)}]
-		$e^{i\theta}$ stellt einen Vector in der complexen Zahlenebene da, der um einen Winkel $\theta$ um den Einheitskreis rotiert worden ist. Mit der eulerschen Formel $e^{i\theta} = \cos(\theta)+i\sin(theta)$ bekommt man die kartesischen Koordinaten des rotierten Vektors. Da $\pi$ genau eine halbe Rotation um den Einheitskreis ist bekommt man $e^{i\theta} = -1$. Dies kann man dann noch umformen um Eulers Identität $e^{i\theta} +1 = 0$ zu erhalten.
+		$e^{i\theta}$ stellt einen Vektor in der komplexen Zahlenebene da, der um einen Winkel $\theta$ um den Einheitskreis rotiert worden ist. Mit der eulerschen Formel $e^{i\theta} = \cos(\theta)+i\sin(theta)$ bekommt man die kartesischen Koordinaten des rotierten Vektors. Da $\pi$ genau eine halbe Rotation um den Einheitskreis ist bekommt man $e^{i\theta} = -1$. Dies kann man dann noch umformen um Eulers Identität $e^{i\theta} +1 = 0$ zu erhalten.
 		
 		% Copy paste from http://www.texample.net/tikz/examples/unit-circle/
 		\begin{tikzpicture}[scale=3.5,cap=round,>=latex]
         % draw the coordinates
-        \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
-        \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+        \draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$Re(z)$};
+        \draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$Im(z)$};
 
         % draw the unit circle
         \draw[thick] (0cm,0cm) circle(1cm);
