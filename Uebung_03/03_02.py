@@ -1,23 +1,42 @@
-#!/usr/bin/python3.5
+#!/usr/bin/env python3
+
 import matplotlib.pyplot as plt
 import numpy as np
-import math
 
-def PlotE(n):
-    z = complex(0,np.pi)
-    x = np.arange(0,n+1)
-    y = (1+(z/n))**x
-    imag, =plt.plot(x,y.imag)
-    real, =plt.plot(x,y.real)
-    plt.legend([real,imag], ['real','imag'])
+
+def euler_circle_approximation(n):
+    z = complex(0, np.pi)
+    values = np.arange(0, n + 1)
+    values = (1 + z / n) ** values
+
+    return values
+
+
+def plot_values(values, n):
+    label = "n = " + str(n)
+    plt.plot(values.real, values.imag, label=label)
+
+
+def visualize_convergence():
+    for n in [1, 5, 10, 50, 100]:
+        values = euler_circle_approximation(n)
+        plot_values(values, n)
+
+    plt.xlabel('real')
+    plt.ylabel('imaginary')
+    plt.grid(True)
+    plt.xlim(-2.0, 2.0)
+    plt.legend()
     plt.show()
-    #plt.scatter(y.real,y.imag)
-    #plt.show()
-    
+
+
+def scatter_plot_e(n):
+    z = complex(0, np.pi)
+    x = np.arange(0, n+1)
+    y = (1 + (z/n))**x
+    plt.scatter(y.real, y.imag)
+    plt.show()
+
+
 if __name__ == "__main__":
-    PlotE(1)
-    PlotE(5)
-    PlotE(10)
-    PlotE(50)
-    PlotE(100)
-    PlotE(10000)
+    visualize_convergence()
