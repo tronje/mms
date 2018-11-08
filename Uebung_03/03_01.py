@@ -27,7 +27,8 @@ def print_conjugated_multiplication(z_1, z_2):
 def print_conjugated_division(z_1, z_2):
     z_2_star = z_2.conjugate()
     print("{} / {}* = {}".format(z_1, z_2_star, z_1 / z_2_star))
-    
+
+
 def print_calculations(z_1, z_2):
     print_addition(z_1, z_2)
     print_subtraction(z_1, z_2)
@@ -36,6 +37,7 @@ def print_calculations(z_1, z_2):
     print_conjugated_multiplication(z_1, z_2)
     print_conjugated_division(z_1, z_2)
     print()
+
 
 def main():
     print("1 a)")
