@@ -18,14 +18,15 @@ def plot_values(values, n):
 
 
 def visualize_convergence():
-    for n in [1, 5, 10, 50, 100]:
+    for n in [1, 5, 10, 50, 100, 1000]:
         values = euler_circle_approximation(n)
         plot_values(values, n)
 
     plt.xlabel('real')
     plt.ylabel('imaginary')
     plt.grid(True)
-    plt.xlim(-2.0, 2.0)
+    plt.axis('equal')
+    plt.xticks(list(np.linspace(-2.5, 2.5, 11)))
     plt.legend()
     plt.show()
 
