@@ -1,20 +1,29 @@
 #!/usr/bin/env python3
 
 import numpy as np
-from scipy import signal
 from matplotlib import pyplot as plt
 
 
-def square_wave_convolution(n):
-    t = np.linspace(0, 2, 500, endpoint=False)
-    sq_wave = signal.square(5 * np.pi * t)
+def square_wave():
+    y = np.linspace(-2, 2, 100)
 
-    convolution = sq_wave
+    for i in range(len(y)):
+        if y[i] < -0.5 or y[i] > 0.5:
+            y[i] = 0
+        else:
+            y[i] = 1
+
+    return y
+
+
+def square_wave_convolution(n):
+    convolution = square_wave()
 
     for i in range(n):
-        convolution = np.convolve(convolution, convolution, mode='same')
+        convolution = np.convolve(convolution, convolution, mode='full')
 
-    plt.plot(t, convolution)
+    x = np.linspace(-2, 2, len(convolution))
+    plt.plot(x, convolution)
     plt.show()
 
 
