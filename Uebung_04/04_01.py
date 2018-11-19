@@ -22,6 +22,7 @@ def square_wave_convolution(n):
     for i in range(n):
         convolution = np.convolve(convolution, convolution, mode='full')
 
+    # it looks nicer if we "force" the x-values to be in the interval (-2, 2)
     x = np.linspace(-2, 2, len(convolution))
     plt.plot(x, convolution)
     plt.show()
