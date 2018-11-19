@@ -34,7 +34,29 @@
 		\item[\textbf{1.}]
 		\begin{enumerate}
 			\item[\textbf{1)}]
-				TODO
+				\begin{enumerate}
+				\item[\textbf{a)}]
+				\item[\textbf{b)} $f(t)=\cos(t)$]
+				\begin{align*}
+					c_m&=\frac{1}{2\pi}\int_{-\pi}^{\pi}\cos(t)e^{-jm\omega_0t}dt\\
+					   &=\frac{1}{2\pi}\int_{-\pi}^{\pi}\frac{1}{2}(e^{jt}+e^{-jt})e^{-jm\omega_0t}dt\\
+					   &=\frac{1}{4\pi}\int_{-\pi}^{\pi}e^{jt-jm\omega_0t}+e^{-jt-jm\omega_0t}dt\\
+					   &=\frac{1}{4\pi}\int_{-\pi}^{\pi}e^{jt(1-m\omega_0)}dt+\int_{-\pi}^{\pi}e^{-jt(1+m\omega_0)}dt\\
+					   &=\frac{1}{4\pi}\left[\frac{1}{j(1-m\omega_0)} e^{jt(1-m\omega_0)}\right]_{-\pi}^{\pi}+\left[\frac{1}{-j(1+m\omega_0)}e^{-jt(1+m\omega_0)}\right]_{-\pi}^{\pi}\\
+					   &=\frac{1}{4\pi}(\frac{1}{j(1-m\omega_0)}(e^{j\pi(1-m\omega_0)}-e^{-j\pi(1-m\omega_0)})\\&+\frac{1}{-j(1+m\omega_0)}(e^{-jpi(1+m\omega_0)}-e^{jpi(1+m\omega_0)}))\\
+					   &=\frac{1}{4\pi}(\frac{1}{j(1-m\omega_0)}\frac{2}{-j}\sin(\pi(1-m\omega_0))+\frac{1}{-j(1+m\omega_0)}\frac{2}{-j}\sin(\pi(-1-m\omega_0)))\\
+					   &=\frac{1}{4\pi}(\frac{2}{1-m\omega_0}\sin(\pi-\pi m\omega_0))+\frac{2}{-1-m\omega_0}\sin(-\pi-\pi m\omega_0)))\\
+					   &=\frac{2}{4\pi-4\pi m\omega_0}\sin(\pi-\pi m\omega_0))+\frac{2}{-4\pi-4\pi m\omega_0}\sin(-\pi-\pi m\omega_0))\\
+					   &=\frac{-1}{2\pi-2\pi m\omega_0}\sin(-\pi m\omega_0))+\frac{-1}{-2\pi-2\pi m\omega_0}\sin(-\pi m\omega_0))\\
+					   &=\frac{1}{2\pi-2\pi m\omega_0}\sin(\pi m\omega_0))+\frac{1}{-2\pi-2\pi m\omega_0}\sin(\pi m\omega_0))\\
+					   &=\sin(\pi m\omega_0)(\frac{1}{2\pi-2\pi m\omega_0}+\frac{1}{-2\pi-2\pi m\omega_0})\\
+					   &=\frac{1}{2\pi}\sin(\pi m\omega_0)(\frac{1}{1- m\omega_0}+\frac{1}{-1-m\omega_0})\\
+					   &=\frac{1}{2\pi}\sin(\pi m\omega_0)\frac{(-1-m\omega_0)+(1- m\omega_0)}{(1- m\omega_0)(-1-m\omega_0)}\\
+					   &=\frac{1}{2\pi}\sin(\pi m\omega_0)\frac{-2m\omega_0}{(-1-m\omega_0+m\omega_0+m^2\omega_0^2)}\\
+					   &=\frac{1}{2\pi}\sin(\pi m\omega_0)\frac{-2m\omega_0}{(m^2\omega_0^2-1)}\\
+					   &=\frac{-m\omega_0}{\pi m^2\omega_0^2-\pi}\sin(\pi m\omega_0)\\
+				\end{align*}
+				\end{enumerate}
 			\item[\textbf{2)}]
 				TODO
 			\item[\textbf{3)}]
