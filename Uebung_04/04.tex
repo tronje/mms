@@ -1,0 +1,65 @@
+\newcommand{\authorinfotitle}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\authorinfo}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\titleinfo}{MMS}
+\newcommand{\qed}{\square}
+
+\documentclass[a4paper,11pt]{article}
+%\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{breqn}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\author{\authorinfotitle}
+\title{\titleinfo}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\authorinfo}
+\fancyhead[L]{MMS Hausaufgaben}
+\fancyfoot[C]{\thepage}
+\allowdisplaybreaks
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		% Aufgabe 1
+		\item[\textbf{1.}]
+		\begin{enumerate}
+			\item[\textbf{1)}]
+				TODO
+			\item[\textbf{2)}]
+				TODO
+		\end{enumerate}
+		% Aufgabe 2
+		\item[\textbf{2)}]
+		\begin{enumerate}
+			\item[\textbf{1)}]
+				Faltet man das Rechteckssignal mit sich selbst (also ist $n=1$),
+				erhält man ein Dreieckssignal.
+				Geht $n$ gegen $\infty$, konvergiert unser Ergebnis zu einem
+				Dirac-Stoß. Tatsächlich tritt bei $n=8$ schon ein Fehler auf,
+				und unsere Visualisierung scheitert. In dem Fall erreicht
+				$f(0)$ so einen hohen Wert, dass \texttt{pyplot} nicht mehr
+				damit umgehen kann.
+			\item[\textbf{2)}]
+				Das Faltungstheorem besagt, dass:
+				\begin{align*}
+					f * g = F^{-1}\left \{ F\{f\} \cdot F\{g\}\right \}
+				\end{align*}
+				wobei $f * g$ die Faltung zweier Funktionen $f$ und $g$ ist.
+				$F^{-1}$ sei die inverse Fouriertransformation, und $F$ die
+				Fouriertransformation.
+				Wir haben die linke und die rechte Seite der Gleichung in
+				Python implementiert, und zeigen durch das Zeichnen zweier Graphen,
+				dass die Gleichung stimmt - denn die Graphen überlappen exakt.
+    	\end{enumerate}
+	\end{enumerate}
+\end{document}
