@@ -37,6 +37,43 @@
 				TODO
 			\item[\textbf{2)}]
 				TODO
+			\item[\textbf{3)}]
+			\begin{align*}
+			g(t) &= rect(t) * rect(t) = \int_{- \infty}^{\infty}rect(\tau - t)\cdot rect(t)dt
+			\end{align*}
+			wobei $rect(t)$ der Rechteckimpuls ist:
+			\begin{align*}
+			rect(t) = 
+			\begin{cases}
+			1 \text{, für } |t| \leq \frac{1}{2} \\
+			0 \text{, für } |t| \geq \frac{1}{2}
+			\end{cases}
+			\end{align*}
+			Für die Faltung unterscheiden wir 2 Fälle. \\ \\
+			Fall 1: $|\tau| \le 1$ \\
+			\begin{align*}
+			rect(\tau - t)\cdot rect(t) = 0 \\
+			\Rightarrow g(t) = \int_{- \infty}^{\infty} 0 dt = 0 , \tau \not\in [-1, 1]
+			\end{align*}
+			Fall 2: $|\tau| \ge 1$ \\
+			Die Rechtecke überlappen sich, der Überlappungsbereich hat die Breite $\Delta t = 1 - \tau$. Es gilt:
+			\begin{align*}
+			y(t) &= \int_{- \infty}^{\infty}rect(\tau - t)\cdot rect(t)dt = \int_{\Delta t} 1^2 = \Delta t \cdot 1 \\
+			&= \begin{cases}
+			1 + \tau &, \tau\in [-1, 0] \\
+			1 - \tau &, \tau\in [0,1]
+			\end{cases}
+			\end{align*}
+			Also gilt insgesamt:
+			\begin{align*}
+			y(t) =
+			\begin{cases}
+			0 &, \tau\not\in [-1,1] \\
+			1 + t &, \tau\in [-1, 0] \\
+			1 - t &, \tau\in [0,1]
+			\end{cases}
+			\end{align*}
+			Dies entspricht dem Dreiecksimpuls.
 		\end{enumerate}
 		% Aufgabe 2
 		\item[\textbf{2)}]
