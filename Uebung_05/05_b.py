@@ -17,13 +17,22 @@ def autocorrelation(f):
 def main():
     x = np.linspace(0, 2 * np.pi * 120, 2000)
     s = signal(x)
-    plt.subplot(211)
+
+    plt.subplot(221)
+    plt.plot(x, np.sin(x))
+    plt.title('Signal without added noise')
+
+    plt.subplot(222)
+    plt.plot(x, autocorrelation(np.sin(x)))
+    plt.title('Autocorrelation of "normal" signal')
+
+    plt.subplot(223)
     plt.plot(x, s)
     plt.title('Signal with added random noise')
 
-    plt.subplot(212)
+    plt.subplot(224)
     plt.plot(x, autocorrelation(s))
-    plt.title('Autocorrelation of above signal')
+    plt.title('Autocorrelation of signal with added noise')
 
     plt.show()
 
