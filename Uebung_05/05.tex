@@ -32,11 +32,29 @@
 	\begin{enumerate}
 		% Aufgabe 1
 		\item[\textbf{1.}]
+			\begin{enumerate}
+				\item[b)]
+					Sei
+					\begin{align*}
+						s(t) = A_1 \cos(t) \\
+						g(t) = A_2 \cos(t)
+					\end{align*}
+					und gelte
+					\begin{align}
+						A_1 \neq A_2
+					\end{align}
+					Wir berechnen die Korrelation von $s(t)$ und $g(t)$:
+					\begin{align*}
+						\rho_{sg} &= \frac{\displaystyle \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T A_1 A_2 \cos^2(t) dt}{\sqrt{\rho_s\rho_g}} \\
+								  &= \frac{\displaystyle \lim_{T \to \infty} \frac{A_1A_2}{2T} \int_{-T}^T \cos^2(t) dt}{\sqrt{\rho_s\rho_g}}
+					\end{align*}
+			\end{enumerate}
+
 		% Aufgabe 2
 		\item[\textbf{2)}]
 			\begin{enumerate}
 				\item[a)]
-					Stimmen die beide Sinus-Funktionen überein, so ist der
+					Stimmen die beiden Sinus-Funktionen überein, so ist der
 					Korrelationzkoeffizient 1 --- denn die Funktionen sind ja
 					identisch. Um $\pi$ verschoben, müsste der Koeffizient -1
 					sein, da
