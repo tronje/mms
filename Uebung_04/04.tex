@@ -16,6 +16,7 @@
 \usepackage{fancyhdr}
 \usepackage{multicol}
 \usepackage{tikz}
+\usepackage{trfsigns}
 
 \author{\authorinfotitle}
 \title{\titleinfo}
@@ -58,7 +59,18 @@
 				\end{align*}
 				\end{enumerate}
 			\item[\textbf{2)}]
-				TODO
+			Die Fouriertransformation der Cosinus-Funktion sieht aus wie folgt:
+			\begin{align*}
+			\cos(\Omega t) \laplace \frac{1}{2}(\delta(\omega + \Omega)+\delta(\omega - \Omega))
+			\end{align*}
+			Außerdem besagt das Verschiebungstheorem, dass
+			\begin{align*}
+			s(t-t_0) \laplace S(\omega) \cdot e^{-j\omega t_0}
+			\end{align*}
+			Da die Sinus-Funktion um $\frac{\pi}{2}$ von der Cosinus-Funktion verschoben ist, lässt sich das Verschiebungstheorem hier anwenden. Die Sinus-Funktion hat also die folgende Form:
+			\begin{align*}
+			\sin(\Omega t) \laplace j \cdot \frac{1}{2}(\delta(\omega + \Omega)-\delta(\omega - \Omega))
+			\end{align*}
 			\item[\textbf{3)}]
 			\begin{align*}
 			g(t) &= rect(t) * rect(t) = \int_{- \infty}^{\infty}rect(\tau - t)\cdot rect(t)dt

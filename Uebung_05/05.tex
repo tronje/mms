@@ -16,6 +16,7 @@
 \usepackage{fancyhdr}
 \usepackage{multicol}
 \usepackage{tikz}
+\usepackage{trfsigns}
 
 \author{\authorinfotitle}
 \title{\titleinfo}
@@ -33,6 +34,17 @@
 		% Aufgabe 1
 		\item[\textbf{1.}]
 			\begin{enumerate}
+				\item[a)]
+				Da die Ableitung von Sinus Cosinus ist, wie man sich auch leicht am Einhaltskreis veranschaulichen kann, gilt:
+				\begin{align*}
+				\cos(\Omega t) = \frac{d}{dt} \sin(\Omega t) &\laplace (j\omega) \cdot (\frac{1}{2}j \cdot (\delta(\omega + \Omega) - \delta(\omega - \Omega)) \\
+				&= j^2\omega\frac{1}{2} \cdot (\delta(\omega + \Omega) - \delta(\omega - \Omega)) \\
+				&= \frac{1}{2} \cdot (\delta(\omega + \Omega) \cdot \underbrace{(-\omega)}_{\omega = - \Omega} - \delta(\omega - \Omega) \cdot  \underbrace{(-\omega)}_{\omega = \Omega})
+				\end{align*}
+				Und für $\Omega = 1$ folgt:
+				\begin{align*}
+				\cos(\Omega t) = \frac{d}{dt} \sin(\Omega t) &\laplace \frac{1}{2} \cdot (\delta(\omega + \Omega) + \delta(\omega - \Omega))
+				\end{align*}
 				\item[b)]
 					Sei
 					\begin{align*}
