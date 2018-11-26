@@ -55,10 +55,23 @@
 					\begin{align}
 						A_1 \neq A_2
 					\end{align}
+					Es gilt weiterhin:
+					\begin{align}
+						\int \cos^2(x)dx &= \frac{1}{2} (x + \frac{\sin(2x)}{2}) \\
+						\int_{-T}^T \cos^2(t)dt &= T + \frac{\sin(2T)}{2} \\
+						\lim_{x \to \infty} \frac{\sin(nx)}{x} &= 0
+					\end{align}
 					Wir berechnen die Korrelation von $s(t)$ und $g(t)$:
 					\begin{align*}
 						\rho_{sg} &= \frac{\displaystyle \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T A_1 A_2 \cos^2(t) dt}{\sqrt{\rho_s\rho_g}} \\
-								  &= \frac{\displaystyle \lim_{T \to \infty} \frac{A_1A_2}{2T} \int_{-T}^T \cos^2(t) dt}{\sqrt{\rho_s\rho_g}}
+								  &= A_1A_2 \cdot \frac{\displaystyle \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T \cos^2(t) dt}{\sqrt{\rho_s\rho_g}} \\
+								  &\overset{(3)}{=} A_1A_2 \cdot \frac{\displaystyle \lim_{T \to \infty} \frac{T + \frac{\sin(2T)}{2}}{2T}}{\sqrt{\rho_s\rho_g}} \\
+								  &= \frac{1}{2} A_1A_2 \cdot \frac{\displaystyle \lim_{T \to \infty} 1 + \frac{\sin(2T)}{2T}}{\sqrt{\rho_s\rho_g}} \\
+								  &\overset{(4)}{=} \frac{1}{2}A_1A_2 \cdot \frac{1}{\sqrt{\rho_s\rho_g}}
+					\end{align*}
+					Es bleibt, $\rho_s$ und $\rho_g$ zu berechnen.
+					\begin{align*}
+						\rho_s &= A_1 \lim_{T \to \infty} \frac{1}{2T} \int_{-T}^T \cos^2(t) dt
 					\end{align*}
 			\end{enumerate}
 
