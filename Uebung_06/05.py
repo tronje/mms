@@ -2,12 +2,13 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
+# Aufgabe 2. a)
 def fft2(s):
     X = np.fft.fft(s,axis=0)
     Result = np.fft.fft(X,axis=1)
     return Result
 
-if __name__ == "__main__":
+def Aufgabe2a():
     x = np.arange(-np.pi, np.pi,0.1)
     y = np.arange(-np.pi, np.pi,0.1)
     X,Y = np.meshgrid(x,y)
@@ -43,3 +44,35 @@ if __name__ == "__main__":
     error = np.sum(S1-S2)
     
     print("Total difference: " + str(error))
+
+# Aufgabe 2. b)
+def CenteredAmplitudeAndPhase(S):
+    Phase = np.angle(S)
+    Amplitude = np.abs(S)
+    return Amplitude, Phase
+
+def Aufgabe2c():
+    x = np.arange(0, 20,1)
+    y = np.arange(0, 20,1)
+    X,Y = np.meshgrid(x,y)
+    s = np.zeros((20,20))
+    s[X==10] = 255
+    
+    plt.imshow(s, cmap='gray')
+    plt.suptitle('Vertical line')
+    plt.show()
+
+    A,P = CenteredAmplitudeAndPhase(fft2(s))
+    fig = plt.figure()
+    ax = fig.add_subplot(121)
+    ax.imshow(A)
+    ax.set_title("Amplitude spectrum")
+    ax = fig.add_subplot(122)
+    ax.imshow(P)
+    ax.set_title("Phase spectrum")
+    plt.show()
+
+if __name__ == "__main__":
+    Aufgabe2a()
+    Aufgabe2c()
+
