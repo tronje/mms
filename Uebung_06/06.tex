@@ -58,7 +58,13 @@
 						 &\overset{(1)}{=} \int_{-\infty}^{\infty} f(x, \beta) \ d\beta
 					\end{align*}
 				\item[c)]
-					TODO
+					\begin{align*}
+					F(u,v) &= \iint_{-\infty}^{\infty}\delta^2(x,y)e^{-j2\pi ux}e^{-j2\pi vy}dx dy\\
+					&= \iint_{-\infty}^{\infty}\delta(x)\delta(y)e^{-j2\pi ux}e^{-j2\pi vy}dx dy\\
+					&=\iint_{-\infty}^{\infty}\delta(x)e^{-j2\pi ux}dx \delta(y)e^{-j2\pi vy}dy\\
+					&=\int_{-\infty}^{\infty} \delta(y)e^{-j2\pi vy}dy\\
+					&= 1\\
+					\end{align*}
 			\end{enumerate}
 	\end{enumerate}
 \end{document}
