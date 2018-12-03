@@ -52,25 +52,56 @@ def CenteredAmplitudeAndPhase(S):
     return Amplitude, Phase
 
 def Aufgabe2c():
-    x = np.arange(0, 20,1)
-    y = np.arange(0, 20,1)
-    X,Y = np.meshgrid(x,y)
-    s = np.zeros((20,20))
-    s[X==10] = 255
-    
-    plt.imshow(s, cmap='gray')
-    plt.suptitle('Vertical line')
+    vert_image = vertical_edge_image()
+    diag_image = diagonal_edge_image()
+
+    plt.subplot(321)
+    plt.imshow(vert_image, cmap='gray')
+    plt.title('Vertical line')
+
+    plt.subplot(322)
+    plt.imshow(diag_image, cmap='gray')
+    plt.title('Diagonal line')
+
+    A, P = CenteredAmplitudeAndPhase(fft2(vert_image))
+    plt.subplot(323)
+    plt.imshow(A)
+    plt.title("Amplitude spectrum")
+
+    plt.subplot(325)
+    plt.imshow(P)
+    plt.title("Phase spectrum")
+
+    A, P = CenteredAmplitudeAndPhase(fft2(diag_image))
+    plt.subplot(324)
+    plt.imshow(A)
+    plt.title("Amplitude spectrum")
+
+    plt.subplot(326)
+    plt.imshow(P)
+    plt.title("Phase spectrum")
+
+
     plt.show()
 
-    A,P = CenteredAmplitudeAndPhase(fft2(s))
-    fig = plt.figure()
-    ax = fig.add_subplot(121)
-    ax.imshow(A)
-    ax.set_title("Amplitude spectrum")
-    ax = fig.add_subplot(122)
-    ax.imshow(P)
-    ax.set_title("Phase spectrum")
-    plt.show()
+
+def vertical_edge_image():
+    s = np.zeros((20, 20))
+
+    for i in range(20):
+        s[i][10] = 255
+
+    return s
+
+
+def diagonal_edge_image():
+    s = np.zeros((20,20))
+
+    for i in range(20):
+        s[i][i] = 255
+
+    return s
+
 
 if __name__ == "__main__":
     Aufgabe2a()
