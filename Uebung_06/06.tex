@@ -42,7 +42,21 @@
 					&= \frac{1}{-j2\pi v} e^{-j2\pi vy}\\
 					\end{align*}
 				\item[b)]
-					TODO
+					Gegeben:
+					\begin{align*}
+						f(x, y)& \\
+						\delta_x(x, y) &= \delta(x) \\
+						(f * g)(x, y) &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(\alpha, \beta) g(x - \alpha, y - \beta) \ d\alpha \ d\beta
+					\end{align*}
+					Es gilt außerdem, aufgrund der Ausblendeigenschaft:
+					\begin{align}
+						\int_{-\infty}^{\infty} f(x) \delta(x - a) dx = \int_{-\infty}^{\infty} f(x) \delta(a - x) dx = f(a)
+					\end{align}
+					Also:
+					\begin{align*}
+						(f * \delta_x)(x, y) &= \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} f(\alpha, \beta) \delta(x - \alpha) \ d\alpha \ d\beta \\
+						 &\overset{(1)}{=} \int_{-\infty}^{\infty} f(x, \beta) \ d\beta
+					\end{align*}
 				\item[c)]
 					\begin{align*}
 					F(u,v) &= \iint_{-\infty}^{\infty}\delta^2(x,y)e^{-j2\pi ux}e^{-j2\pi vy}dx dy\\
