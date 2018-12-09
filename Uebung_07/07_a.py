@@ -15,7 +15,7 @@ def reconstruct(ns, label):
         """Constant function s(t) = s_0"""
         return 1.5  # arbitrary value
 
-    T = 3  # period
+    T = 5  # period
     space = np.linspace(-T, T, 1000)
     signal = np.zeros(1000)
 
