@@ -1,0 +1,105 @@
+\newcommand{\authorinfotitle}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\authorinfo}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\titleinfo}{MMS}
+\newcommand{\qed}{\square}
+
+\documentclass[a4paper,11pt]{article}
+%\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{breqn}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{trfsigns}
+
+\author{\authorinfotitle}
+\title{\titleinfo}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\authorinfo}
+\fancyhead[L]{MMS Hausaufgaben}
+\fancyfoot[C]{\thepage}
+\allowdisplaybreaks
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		% Aufgabe 1
+		\item[\textbf{1.}]
+			\begin{enumerate}
+				\item[a)]
+					TODO
+				\item[b)]
+					TODO
+			\end{enumerate}
+		% Aufgabe 2
+		\item[\textbf{2.}]
+			\begin{enumerate}
+				\item[a)]
+					Wir beobachten --- wie erwartet --- eine Annäherung unser
+					Ausgangssignal. Wie in Aufgabe 1b) gefordert, handelt es
+					sich um ein konstantes Signal, was auch unserem Code
+					zu entnehmen ist:
+					\begin{align*}
+						s(t) = s_0 = 1.5
+					\end{align*}
+
+					Wir würden für eine perfekte Rekonstruktion also eine Gerade
+					erwarten, welche parallel zur X-Achse verläuft, und die
+					Y-Achse am Punkt $(0, 1.5)$ schneidet.
+
+					Eine Rekonstruktion mit 3, 5, und 7 Werten liefert, ehrlich
+					gesagt, jeweils ähnlich schlechte Ergebnisse. Natürlich
+					nähert sich die Rekonstruktion dem Original umso besser,
+					je mehr sinc-Funktionen benutzt werden. Allerdings sehen wir
+					keinen beachtlichen Unterschied, ob jetzt 3, 5, oder 7
+					Funktionen genutzt wurden. Die Werte aller dieser Rekonstruktionen
+					schwanken innerhalb eines gewissen Bandes um die Wert
+					des Originals, um dann abzufallen und weiter um 0 zu schwanken.
+
+					Zum testen haben wir auch eine Rekonstruktion mit 200 sinc-Funktionen
+					getätigt, welche deutlich besser aussiehst. Auch sie entfernt
+					sich allerdings deutlich vom originalen Signal, wenn man sich
+					einen größeren Ausschnitt ansieht, indem man die
+					Variable \texttt{T} in unserem Code etwas höher, etwa auf
+					\texttt{100} setzt.
+				\item[b)]
+					Man beachte zunächst, dass wir zum Verringern der
+					Sampling-Rate \texttt{scipy.signal.resample} auf das Ausgangssignal,
+					welches vom Aufgabenblatt gegeben war, angewendet haben.
+					Dies produziert leicht unterschiedliche Ergebnisse, als
+					direkt beim \\
+					\texttt{numpy.linspace} Aufruf den dritten Parameter
+					zu variieren.
+
+					Unterabtastungen des Signals sind zunächst nicht überraschend.
+					Der Graph wird aus zu wenig Punkten extrapoliert, sodass
+					zackige, ungleichmäßige Muster auftreten. Und ist die
+					Abtastrate deutlich zu niedrig, ist auch keine Periode
+					mehr zu erkennen, und der Graph sieht beinahe komplett
+					arbiträr aus.
+					Natürlich verbessert sich das unterabgetastete Signal mit
+					wachsender Abtastrate --- bei einer Rate von etwa $1500$
+					ist kein interessanter Unterschied mehr zu erkennen.
+
+					Ab einer Abtastrate von etwa $250$ sind sozusagen ``Kugeln''
+					im Unterabgetasteten Signal zu erkennen.
+					Unter dieser Rate ist der Wertebereich des entstandenen
+					Signals deutlich geringer als der des Ausgangssignals.
+
+					Wenden wir einen Tiefpass-Filter auf das Ausgangssignal an,
+					bevor wir es unterabtasten, sehen wir bei niedrigen Abtastraten,
+					also bei raten bis etwa $200$, eine erhöhte Regelmäßigkeit
+					im entstandenen Signal. Wo vorher noch unregelmäßige Zacken
+					zu sehen waren, sind jetzt regelmäßigere Zacken --- eine kleine
+					aber erkennbare Verbesserung.
+			\end{enumerate}
+	\end{enumerate}
+\end{document}
