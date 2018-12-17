@@ -1,0 +1,45 @@
+\newcommand{\authorinfotitle}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\authorinfo}{Vanessa Closius, Jonas Tietz, Tronje Krabbe}
+\newcommand{\titleinfo}{MMS}
+\newcommand{\qed}{\square}
+
+\documentclass[a4paper,11pt]{article}
+%\usepackage[german,ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{breqn}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{tikz}
+\usepackage{trfsigns}
+
+\author{\authorinfotitle}
+\title{\titleinfo}
+\date{\today}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[R]{\authorinfo}
+\fancyhead[L]{MMS Hausaufgaben}
+\fancyfoot[C]{\thepage}
+\allowdisplaybreaks
+\begin{document}
+	\maketitle
+	\begin{enumerate}
+		% Aufgabe 1
+		\item[\textbf{1.}]
+			\begin{enumerate}
+				\item[b)]
+				Die Bandpasscharakteristik der Gabor-Transformation lässt sich leicht aus ihrer Formel $ e^{j\omega t}\cdot G(t,\sigma)$ herleiten. $e^{j\omega t}$ lässt sich nach der eulerschen Formel als
+				$e^{j\omega t} = \cos(\omega t) + j\sin(\omega t)$ darstellen.
+				Im Frequenzbereich wird daraus sowohl ein gerades als auch ein ungerades Impulspaar. Aus der Multiplikation wird dann eine Faltung. Dadurch bekommt man im Frequenzbereich diese Formel: $(\frac{1}{2}(\delta(t+\omega)+\delta(t-\omega)) + \frac{1}{2}(\delta(t+\omega)-\delta(t-\omega)))\otimes F\lbrace G(t,\sigma) \rbrace$
+				
+				Laut den Replikationstheorem wird die Gauß'sche Dichtefunktion auf die Dirac-Stöße repliziert. Dadurch entsteht ein Bandpassfilter, dessen Breite sich mit der Standardabweichung $\sigma$ der Gauß'sche Dichtefunktion einstellen lässt und dessen \"Bandmitte\" der Frequenz $\omega$. 
+			\end{enumerate}
+	\end{enumerate}
+\end{document}
