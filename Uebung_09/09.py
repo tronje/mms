@@ -4,7 +4,15 @@ import numpy as np
 from matplotlib import pyplot as plt
 
 
-class GameState(object):
+class ShellGame(object):
+    """A shell game.
+
+    Instantiating a shell game will automatically 'play' a shell game without
+    the player switching their choice. The switch can optionally be made after
+    instantiation with `switch_choice`. Whether or not the player has won can
+    be queried with the `win` method.
+    """
+
     def __init__(self):
         self.shell_with_ball = np.random.randint(3)
         self.picked_shell = np.random.randint(3)
@@ -31,11 +39,17 @@ class GameState(object):
 
 
 def main():
+    """Play a shell game 10.000 times each with and without the player
+    switching their choice.
+
+    Results are printed and plotted.
+    """
+
     wins_without_switching = 0
     wins_over_number_of_trials = []
 
     for i in range(10000):
-        gs = GameState()
+        gs = ShellGame()
         if gs.win():
             wins_without_switching += 1
         wins_over_number_of_trials.append(wins_without_switching)
@@ -46,7 +60,7 @@ def main():
     wins_over_number_of_trials = []
 
     for i in range(10000):
-        gs = GameState()
+        gs = ShellGame()
         gs.switch_choice()
         if gs.win():
             wins_with_switching += 1
