@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import numpy as np
+from matplotlib import pyplot as plt
 
 
 class GameState(object):
@@ -31,19 +32,27 @@ class GameState(object):
 
 def main():
     wins_without_switching = 0
+    wins_over_number_of_trials = []
 
     for i in range(10000):
         gs = GameState()
         if gs.win():
             wins_without_switching += 1
+        wins_over_number_of_trials.append(wins_without_switching)
+
+    plt.plot(wins_over_number_of_trials, label="Wins without switching")
 
     wins_with_switching = 0
+    wins_over_number_of_trials = []
 
     for i in range(10000):
         gs = GameState()
         gs.switch_choice()
         if gs.win():
             wins_with_switching += 1
+        wins_over_number_of_trials.append(wins_with_switching)
+
+    plt.plot(wins_over_number_of_trials, label="Wins with switching")
 
     print(f"Without switching: {wins_without_switching} wins out of 10000")
     print(f"Computed odds without switching: {wins_without_switching / 10000}")
@@ -52,6 +61,9 @@ def main():
 
     print(f"With switching: {wins_with_switching} wins out of 10000")
     print(f"Computed odds with switching: {wins_with_switching / 10000}")
+
+    plt.legend()
+    plt.show()
 
 
 if __name__ == "__main__":
