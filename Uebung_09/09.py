@@ -40,7 +40,7 @@ def main():
             wins_without_switching += 1
         wins_over_number_of_trials.append(wins_without_switching)
 
-    plt.plot(wins_over_number_of_trials, label="Wins without switching")
+    plt.plot(wins_over_number_of_trials, label="Without switching")
 
     wins_with_switching = 0
     wins_over_number_of_trials = []
@@ -52,16 +52,20 @@ def main():
             wins_with_switching += 1
         wins_over_number_of_trials.append(wins_with_switching)
 
-    plt.plot(wins_over_number_of_trials, label="Wins with switching")
+    plt.plot(wins_over_number_of_trials, label="With switching")
 
     print(f"Without switching: {wins_without_switching} wins out of 10000")
-    print(f"Computed odds without switching: {wins_without_switching / 10000}")
+    print("Relative frequency of winning without switching: "
+          f"{wins_without_switching / 10000}")
 
     print()
 
     print(f"With switching: {wins_with_switching} wins out of 10000")
-    print(f"Computed odds with switching: {wins_with_switching / 10000}")
+    print("Relative frequency of winning with switching: "
+          f"{wins_with_switching / 10000}")
 
+    plt.xlabel("games played")
+    plt.ylabel("wins")
     plt.legend()
     plt.show()
 
