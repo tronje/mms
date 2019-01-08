@@ -39,12 +39,21 @@
 		% 1.a
 		\item[\textbf{a)}]
 		\begin{align*}
-		E{aX+bY+c} &= \iint (ax+by+c)p(x,y)dxdy\\
+		E\lbrace aX+bY+c\rbrace &= \iint (ax+by+c)p(x,y)dxdy\\
 				   &= \iint ax \cdot p(x,y) + by \cdot p(x,y) + c \cdot p(x,y) dxdy\\
 				   &= \iint ax \cdot p(x,y) dxdy + \iint by \cdot p(x,y) dxdy + \iint c \cdot p(x,y) dxdy\\
 				  &= \int ax \cdot p(x) dx + \int by \cdot p(y) dy +  c\\ 
 				  &= a\int x \cdot p(x) dx + b\int y \cdot p(y) dy +  c\\ 
-				  &= aE{X} + bE{Y} +  c\\ 
+				  &= aE\lbrace X\rbrace + bE\lbrace Y\rbrace +  c\\ 
+		\end{align*}
+		\item[\textbf{b)}]
+		\begin{align*}
+		E\lbrace (X-\mu_x)^2\rbrace &= E\lbrace X^2-2X\mu_x + \mu^2_x\rbrace \\
+							  		&= E\lbrace X^2\rbrace-E\lbrace 2X\mu_x \rbrace + \mu^2_x\\
+							  		&= E\lbrace X^2\rbrace-2\mu_x E\lbrace X \rbrace + \mu^2_x\\				
+							  		&= E\lbrace X^2\rbrace-2 E\lbrace X \rbrace E\lbrace X \rbrace + E\lbrace X \rbrace^2\\			
+							  		&= E\lbrace X^2\rbrace-2 E\lbrace X \rbrace^2 + E\lbrace X \rbrace^2\\				
+							  		&= E\lbrace X^2\rbrace- E\lbrace X \rbrace^2 \\					  						&= E\lbrace X^2\rbrace- \mu_x^2 \\	
 		\end{align*}
 		\end{enumerate}
 	\end{enumerate}
