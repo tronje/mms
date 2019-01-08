@@ -44,7 +44,7 @@
 				   &= \iint ax \cdot p(x,y) dxdy + \iint by \cdot p(x,y) dxdy + \iint c \cdot p(x,y) dxdy\\
 				  &= \int ax \cdot p(x) dx + \int by \cdot p(y) dy +  c\\ 
 				  &= a\int x \cdot p(x) dx + b\int y \cdot p(y) dy +  c\\ 
-				  &= aE\lbrace X\rbrace + bE\lbrace Y\rbrace +  c\\ 
+				  &= aE\lbrace X\rbrace + bE\lbrace Y\rbrace +  c
 		\end{align*}
 		\item[\textbf{b)}]
 		\begin{align*}
@@ -53,7 +53,36 @@
 							  		&= E\lbrace X^2\rbrace-2\mu_x E\lbrace X \rbrace + \mu^2_x\\				
 							  		&= E\lbrace X^2\rbrace-2 E\lbrace X \rbrace E\lbrace X \rbrace + E\lbrace X \rbrace^2\\			
 							  		&= E\lbrace X^2\rbrace-2 E\lbrace X \rbrace^2 + E\lbrace X \rbrace^2\\				
-							  		&= E\lbrace X^2\rbrace- E\lbrace X \rbrace^2 \\					  						&= E\lbrace X^2\rbrace- \mu_x^2 \\	
+							  		&= E\lbrace X^2\rbrace- E\lbrace X \rbrace^2 \\					  						&= E\lbrace X^2\rbrace- \mu_x^2
+		\end{align*}
+		\item[\textbf{c)}]
+		\begin{align*}
+		V\lbrace aX + b \rbrace &= E\lbrace (aX + b)^2 \rbrace - E^2\lbrace (aX + b) \rbrace \\
+		&= E\lbrace (a^2X^2 + 2abX + b^2) \rbrace - E\lbrace (aX + b) \rbrace \cdot
+		E\lbrace (aX + b) \rbrace \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace X \rbrace + b^2 - (aE\lbrace X \rbrace + b) \cdot (aE\lbrace X \rbrace + b) \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2 - (a^2E^2\lbrace X \rbrace + 2abE\lbrace X \rbrace + b^2) \\
+		&= a^2E\lbrace X^2 \rbrace - a^2E^2\lbrace X \rbrace \\
+		&= a^2 \cdot (E\lbrace X^2 \rbrace - 2E^2\lbrace X \rbrace) \\
+		&= a^2 \cdot V\lbrace X \rbrace
+		\end{align*}
+		\item[\textbf{d)}]
+		\begin{align*}
+		E\lbrace XY \rbrace &= \iint xy \cdot p(x,y) dxdy \\
+		&= \iint xy \cdot p(x) \cdot p(y) dxdy \\
+		&= \int x \cdot p(x) dx \cdot \int y \cdot p(y) dy \\
+		&= E\lbrace X \rbrace \cdot E\lbrace Y \rbrace
+		\end{align*}
+		\item[\textbf{c)}]
+		\begin{align*}
+		V\lbrace aX + bY \rbrace &= E\lbrace (aX + bY)^2 \rbrace - E^2\lbrace (aX + bY) \rbrace \\
+		&= E\lbrace (a^2X^2 + 2abXY + b^2Y^2) \rbrace - E\lbrace (aX + bY) \rbrace \cdot
+		E\lbrace (aX + bY) \rbrace \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2E\lbrace Y^2 \rbrace - (aE\lbrace X \rbrace + bE\lbrace Y \rbrace) \cdot (aE\lbrace X \rbrace + bE\lbrace Y \rbrace) \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2E\lbrace Y^2 \rbrace - (a^2E^2\lbrace X \rbrace + 2abE\lbrace XY \rbrace + b^2E^2\lbrace Y \rbrace) \\
+		&= a^2E\lbrace X^2 \rbrace + E\lbrace Y^2 \rbrace - a^2E^2\lbrace X \rbrace - b^2E^2\lbrace Y \rbrace\\
+		&= a^2 \cdot (E\lbrace X^2 \rbrace - 2E^2\lbrace X \rbrace) + b^2 \cdot (E\lbrace Y^2 \rbrace - 2E^2\lbrace Y \rbrace) \\
+		&= a^2 \cdot V\lbrace X \rbrace + b^2 \cdot V\lbrace Y \rbrace
 		\end{align*}
 		\end{enumerate}
 	\end{enumerate}
