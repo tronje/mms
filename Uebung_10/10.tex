@@ -61,7 +61,7 @@
 		&= E\lbrace (a^2X^2 + 2abX + b^2) \rbrace - E\lbrace (aX + b) \rbrace \cdot
 		E\lbrace (aX + b) \rbrace \\
 		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace X \rbrace + b^2 - (aE\lbrace X \rbrace + b) \cdot (aE\lbrace X \rbrace + b) \\
-		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2 - (a^2E^2\lbrace X \rbrace + 2abE\lbrace X \rbrace + b^2) \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace X \rbrace + b^2 - (a^2E^2\lbrace X \rbrace + 2abE\lbrace X \rbrace + b^2) \\
 		&= a^2E\lbrace X^2 \rbrace - a^2E^2\lbrace X \rbrace \\
 		&= a^2 \cdot (E\lbrace X^2 \rbrace - 2E^2\lbrace X \rbrace) \\
 		&= a^2 \cdot V\lbrace X \rbrace
@@ -69,17 +69,17 @@
 		\item[\textbf{d)}]
 		\begin{align*}
 		E\lbrace XY \rbrace &= \iint xy \cdot p(x,y) dxdy \\
-		&= \iint xy \cdot p(x) \cdot p(y) dxdy \\
+		&= \iint xy \cdot \underbrace{p(x) \cdot p(y)}_{\text{independence}} dxdy \\
 		&= \int x \cdot p(x) dx \cdot \int y \cdot p(y) dy \\
 		&= E\lbrace X \rbrace \cdot E\lbrace Y \rbrace
 		\end{align*}
-		\item[\textbf{c)}]
+		\item[\textbf{e)}]
 		\begin{align*}
 		V\lbrace aX + bY \rbrace &= E\lbrace (aX + bY)^2 \rbrace - E^2\lbrace (aX + bY) \rbrace \\
 		&= E\lbrace (a^2X^2 + 2abXY + b^2Y^2) \rbrace - E\lbrace (aX + bY) \rbrace \cdot
 		E\lbrace (aX + bY) \rbrace \\
-		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2E\lbrace Y^2 \rbrace - (aE\lbrace X \rbrace + bE\lbrace Y \rbrace) \cdot (aE\lbrace X \rbrace + bE\lbrace Y \rbrace) \\
-		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2E\lbrace Y^2 \rbrace - (a^2E^2\lbrace X \rbrace + 2abE\lbrace XY \rbrace + b^2E^2\lbrace Y \rbrace) \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2E\lbrace Y^2 \rbrace - \\ &(aE\lbrace X \rbrace + bE\lbrace Y \rbrace) \cdot (aE\lbrace X \rbrace + bE\lbrace Y \rbrace) \\
+		&= a^2E\lbrace X^2 \rbrace + 2abE\lbrace XY \rbrace + b^2E\lbrace Y^2 \rbrace - \\ &(a^2E^2\lbrace X \rbrace + \underbrace{2abE\lbrace XY \rbrace}_{\text{independence}} + b^2E^2\lbrace Y \rbrace) \\
 		&= a^2E\lbrace X^2 \rbrace + E\lbrace Y^2 \rbrace - a^2E^2\lbrace X \rbrace - b^2E^2\lbrace Y \rbrace\\
 		&= a^2 \cdot (E\lbrace X^2 \rbrace - 2E^2\lbrace X \rbrace) + b^2 \cdot (E\lbrace Y^2 \rbrace - 2E^2\lbrace Y \rbrace) \\
 		&= a^2 \cdot V\lbrace X \rbrace + b^2 \cdot V\lbrace Y \rbrace
