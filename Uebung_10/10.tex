@@ -85,5 +85,36 @@
 		&= a^2 \cdot V\lbrace X \rbrace + b^2 \cdot V\lbrace Y \rbrace
 		\end{align*}
 		\end{enumerate}
+
+		\item[\textbf{2.}]
+		\begin{enumerate}
+			\item[\textbf{a)}]
+			We replace the integral's limits with 0 and 1 respectively, because
+			our probability density function is 0 outside of those limits.
+			\begin{align*}
+				\mu_X &= \int_{-\infty}^\infty x_n f_{X_n}(x_n) dx \\
+					  &= \int_0^1 x_n 2x_n dx \\
+					  &= \int_0^1 2x_n^2 dx \\
+					  &= \bigg[ \frac{2}{3} x_n^3 \bigg]_0^1 \\
+					  &= \frac{2}{3} - 0 = \frac{2}{3}
+			\end{align*}
+
+			\begin{align*}
+				\sigma_X^2 &= E(X^2) - \mu_X^2 \\
+						   &= E(X^2) - \frac{2}{3}^2 \\
+						   &= \int_0^1 x_n^2 2x_n dx - \frac{4}{9} \\
+						   &= \int_0^1 2x_n^3 dx - \frac{4}{9} \\
+						   &= \bigg[ \frac{2}{4} x_n^4 \bigg]_0^1 - frac{4}{9} \\
+						   &= \frac{1}{2} - \frac{4}{9} = \frac{1}{18}
+			\end{align*}
+
+			\item[\textbf{b)}]
+			\begin{align*}
+				E(Y_n) &= E(X_n + X_{n - 1}) = E(X_n) + E(X_{n + 1}) \\
+					   &= \int\int (x_n + x_{n + 1}) f_{X_n}(x_n) f_{X_{n + 1}}(x_{n + 1}) dx_n dx_{n + 1} \\
+					   &= \int x_n f_{X_n}(x_n) dx_n + \int x_{n + 1} f_{X_{n + 1}}(x_{n + 1}) dx_{n + 1} \\
+					   &= \frac{2}{3} + \frac{2}{3} = \frac{4}{3}
+			\end{align*}
+		\end{enumerate}
 	\end{enumerate}
 \end{document}
