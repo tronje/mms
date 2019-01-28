@@ -38,21 +38,11 @@
 		\begin{enumerate}
 		% 1.a
 		\item[\textbf{a)}]
-		For $x \geq 0$ the MLE can be calculated by taking the logarithm of $p(x|\beta)$ and then using the first derivative to calculate the maximum:
 		\begin{align*}
-		\hat{\beta}^{ML} &= argmax_\beta p_{x|\beta}(x|\beta) = \prod_{n=1}^{N}\frac{1}{\beta}\exp(-\frac{x}{\beta}) \\
-		&= argmax_\beta \log p_{x|\beta}(x|\beta) = \sum_{n=1}^{N} (-\log(\beta)-\frac{x}{\beta}) \\
-		\frac{\partial \log p(x|\beta)}{\partial \beta} &= \sum_{n=1}^{N} (-\frac{1}{\beta}+\frac{x}{\beta^2}) \underbrace{=}_{\text{MLE Maximum}} 0 \\
-		&-N + \frac{1}{\beta} \sum_{n=1}^{N} x = 0 \\
-		\Rightarrow \hat{\beta}^{ML} &= \frac{1}{N} \sum_{n=1}^{N} x
+		p(Y|H_0)&=\prod \frac{1}{\sqrt{2\pi\sigma_0^2}}\exp(\frac{-y(n)^2}{2\sigma_0^2}) \\
+		p(Y|H_1)&=\prod \frac{1}{\sqrt{2\pi\sigma_1^2}}\exp(\frac{-(y(n)-\mu_x)^2}{2\sigma_1^2})
 		\end{align*}
-			% 1.b
-		\item[\textbf{b)}]
-		The resulting estimator is unbiased:
-		\begin{align*}
-		E(\hat{\beta}^{ML}) &= E(\frac{1}{N} \sum_{n=1}^{N} x) = \frac{1}{N} \sum_{n=1}^{N} E(x) = \frac{1}{N} \sum_{n=1}^{N} \beta = \frac{1}{N} \cdot N\beta = \beta
-		\end{align*}
-		
+		where $\sigma_0^2 = \sigma_v^2$ and $\sigma_1^2 = \sigma_v^2 + \sigma_x^2$
 		\end{enumerate}
 
 	\end{enumerate}
