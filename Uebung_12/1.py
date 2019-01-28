@@ -18,7 +18,7 @@ def Detect(signal, threshold):
 
 def PlotROC(mu_x):
     x, y, GroundTruth = GenerateSignal(1, mu_x, 1)
-    plt.plot(x,y)
+    #plt.plot(x,y)
     plt.show()
     
     tau = np.linspace(-5,5)
@@ -47,11 +47,15 @@ def PlotROC(mu_x):
 
 if __name__ == "__main__":
     # Exercise 1.a)
+    # This is a bad detector, because for low false alarm rate it still only has a low hit rate.
+    # An ideal detector would have an curve, which rises fast tu an hit rate close to 1 and then levels out.
     PlotROC(1)
 
     # Exercise 1.b)
+    # mu_x of 0 makes the problem more difficult and mu_x of 2 makes it easier.
     PlotROC(0)
     PlotROC(2)
 
     # Exercise 1.c)
+    # This is still a good detector, but for the wrong problem. It detect H1 if it is H0 and H0 if it is H1.
     PlotROC(-3)
